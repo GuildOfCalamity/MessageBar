@@ -71,7 +71,7 @@ public partial class MessageBar : UserControl
     }
 
     /// <summary>
-    ///   Define our test size property
+    ///   Define our text size property
     /// </summary>
     public static readonly DependencyProperty TextSizeProperty = DependencyProperty.Register(
         nameof(TextSize),
@@ -89,6 +89,28 @@ public partial class MessageBar : UserControl
         if (mbc != null && e.NewValue != null)
         {
             mbc.tbMessage.FontSize = (double)e.NewValue;
+        }
+    }
+
+    /// <summary>
+    ///   Define our text alignment property
+    /// </summary>
+    public static readonly DependencyProperty TextAlignmentProperty = DependencyProperty.Register(
+        nameof(TextAlignment),
+        typeof(HorizontalAlignment),
+        typeof(MessageBar),
+        new PropertyMetadata(HorizontalAlignment.Left, OnTextAlignmentChanged));
+    public HorizontalAlignment TextAlignment
+    {
+        get { return (HorizontalAlignment)this.GetValue(TextAlignmentProperty); }
+        set { this.SetValue(TextAlignmentProperty, value); }
+    }
+    static void OnTextAlignmentChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        var mbc = d as MessageBar;
+        if (mbc != null && e.NewValue != null)
+        {
+            mbc.tbMessage.HorizontalAlignment = (HorizontalAlignment)e.NewValue;
         }
     }
 
@@ -157,7 +179,7 @@ public partial class MessageBar : UserControl
     }
 
     /// <summary>
-    ///   Define our corner radius property
+    ///   Define our border thickness property
     /// </summary>
     public static readonly DependencyProperty BorderThicknessProperty = DependencyProperty.Register(
         nameof(BorderThickness),
@@ -179,7 +201,7 @@ public partial class MessageBar : UserControl
     }
 
     /// <summary>
-    ///   Define our expansion property.
+    ///   Define our speed property.
     /// </summary>
     public static readonly DependencyProperty AnimationSpeedProperty = DependencyProperty.Register(
         nameof(AnimationSpeed),
