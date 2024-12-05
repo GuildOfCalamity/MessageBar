@@ -1,0 +1,42 @@
+﻿<UserControl
+    x:Class="MessageBarDemo.Controls.MessageBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MessageBarDemo.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="MBC"
+    d:DesignHeight="100"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Canvas
+        x:Name="DesignerPane"
+        Width="{Binding ElementName=MBC, Path=BarWidth, FallbackValue=800}"
+        VerticalAlignment="Stretch"
+        ClipToBounds="True">
+        <DockPanel
+            x:Name="MessagePane"
+            Width="0"
+            Height="0">
+            <Border
+                x:Name="MessageBorder"
+                Grid.Row="1"
+                VerticalAlignment="Stretch"
+                Background="{Binding ElementName=MBC, Path=BackgroundBrush, FallbackValue=#181818}"
+                BorderBrush="{Binding ElementName=MBC, Path=BorderBrush, FallbackValue=#AAAAAA}"
+                BorderThickness="{Binding ElementName=MBC, Path=BorderThickness, FallbackValue=3}"
+                CornerRadius="4">
+                <TextBlock
+                    x:Name="tbMessage"
+                    Padding="8"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    Foreground="{Binding ElementName=MBC, Path=ForegroundBrush, FallbackValue=WhiteSmoke}"
+                    IsHitTestVisible="False"
+                    Text="{Binding ElementName=MBC, Path=BarText}"
+                    TextTrimming="CharacterEllipsis"
+                    TextWrapping="Wrap" />
+            </Border>
+        </DockPanel>
+    </Canvas>
+</UserControl>
