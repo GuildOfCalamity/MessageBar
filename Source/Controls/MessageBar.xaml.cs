@@ -88,7 +88,7 @@ public partial class MessageBar : UserControl
         var mbc = d as MessageBar;
         if (mbc != null && e.NewValue != null)
         {
-            mbc.tbMessage.FontSize = (double)e.NewValue;
+            mbc.Message.FontSize = (double)e.NewValue;
         }
     }
 
@@ -110,7 +110,7 @@ public partial class MessageBar : UserControl
         var mbc = d as MessageBar;
         if (mbc != null && e.NewValue != null)
         {
-            mbc.tbMessage.HorizontalAlignment = (HorizontalAlignment)e.NewValue;
+            mbc.Message.HorizontalAlignment = (HorizontalAlignment)e.NewValue;
         }
     }
 
@@ -264,7 +264,7 @@ public partial class MessageBar : UserControl
         if (string.IsNullOrEmpty(msg))
             return;
 
-        //tbMessage.Text = msg;
+        //Message.Text = msg;
 
         if (!_isShown) // reveal
         {
@@ -374,7 +374,7 @@ public partial class MessageBar : UserControl
         if (string.IsNullOrEmpty(msg))
             return;
 
-        //tbMessage.Text = msg;
+        //Message.Text = msg;
 
         if (!_isShown) // reveal
         {

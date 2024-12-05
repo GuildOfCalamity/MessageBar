@@ -27,7 +27,7 @@
                 BorderThickness="{Binding ElementName=MBC, Path=BorderThickness, FallbackValue=3}"
                 CornerRadius="4">
                 <TextBlock
-                    x:Name="tbMessage"
+                    x:Name="Message"
                     Padding="8"
                     VerticalAlignment="Center"
                     Background="Transparent"

@@ -97,7 +97,6 @@
             BarWidth="{Binding ElementName=container, Path=Width}"
             BorderBrush="{StaticResource OutlineBrush}"
             ForegroundBrush="WhiteSmoke"
-            TextAlignment="Center"
             TextSize="16"
             Timeout="{Binding ElementName=TimeoutSlider, Path=Value}" />
 
