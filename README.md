@@ -8,6 +8,10 @@
 | ---- | ---- |
 | NET Core | 8.0 |
 
+### 📝 v1.0.0.1 - December 2024
+
+* Added `TextAlignment` dependency property.
+
 ### 📝 v1.0.0.0 - December 2024
 
 * A simple [InfoBar](https://learn.microsoft.com/en-us/windows/winui/api/microsoft.ui.xaml.controls.infobar?view=winui-2.8) mock-up of the WinUI3 version.
